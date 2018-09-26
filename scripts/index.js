@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function(e) {
 
 navigator.mediaDevices.getUserMedia({audio:true})
                     .then(soundAllowed)
