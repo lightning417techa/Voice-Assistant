@@ -1,6 +1,18 @@
 <script src="scripts/index.js"></script>
 
 <script type="text/javascript">
+    var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    var recognition = new SpeechRecognition();
+    recognition.continuous = true;
+    recognition.onend = function() {
+        recognition.start();
+    }
+    recognition.onresult = function(event) {
+        var current = event.resultIndex;
+        var transcript = event.results[current][0].transcript;
+    }
+    
+    
 function transcribe(words){
     document.getElementById("mic").value="";
     document.getElementById("speech").value=words;
