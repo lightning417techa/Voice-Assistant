@@ -1,6 +1,11 @@
 window.onload = function(e) {
 
-navigator.mediaDevices.getUserMedia({audio:true})
+  accept();
+    
+};
+
+function accept() {
+  navigator.mediaDevices.getUserMedia({audio:true})
                     .then(soundAllowed)
                     .catch(soundNotAllowed);
                     
@@ -13,5 +18,4 @@ var timer = setInterval(function() {
       clearInterval(timer);
     }
 }, 200);    
-    
-};
+}
