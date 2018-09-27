@@ -1,1 +1,7 @@
-
+.CommandBox {
+  text-align: left;
+  width: 90%;
+  left: 50%;
+  background: white;
+  border-color: black;
+}
