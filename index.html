@@ -1,25 +1,12 @@
-<script src="scripts/index.js"></script>
 
-<script type="text/javascript">
-    var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    var recognition = new SpeechRecognition();
-    recognition.continuous = true;
-    recognition.onend = function() {
-        recognition.start();
-    }
-    recognition.onresult = function(event) {
-        var current = event.resultIndex;
-        var transcript = event.results[current][0].transcript;
-    }
-    
-    
+
+<input class="CommandBox" type="text" id="TextInput" name="">
+
+<script src="scripts/index.js"></script>
+</script>
 function transcribe(words){
     document.getElementById("mic").value="";
     document.getElementById("speech").value=words;
     document.getElementById("speech").focus();
 }
 </script>
-Speech input for textarea - click the microphone icon and talk: <br> 
-<br>
-<textarea id="speech" cols="50"></textarea>
-<input id="mic" style="width:15px; height:20px; border:0px; background-color:transparent" x-webkit-speech onwebkitspeechchange="transcribe(this.value)">
